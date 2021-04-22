@@ -73,7 +73,7 @@ func (z *Zx0) Compress(optimal *Zx0Block, inputData []byte, input_size, skip, ba
 	z.bitMask = 0
 
 	for optimal = next.chain; optimal != nil; optimal = optimal.chain {
-		if optimal.offset != 0 {
+		if optimal.offset == 0 {
 			/* copy literals indicator */
 			if first {
 				first = false
